@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mp="http://schemas.android.com/apk/res/com.xcy.xpassword"
+    android:orientation="vertical"
+    android:id="@+id/dialog" >
+    
+    <com.twotoasters.jazzylistview.JazzyListView
+        android:id="@+id/dialog_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:fastScrollEnabled="true"
+        android:listSelector="@android:color/transparent"
+        mp:effect="tilt"
+        mp:max_velocity="0"
+        mp:only_animate_fling="false"
+        mp:only_animate_new_items="false" /> 
+
+</LinearLayout>

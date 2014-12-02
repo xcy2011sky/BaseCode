@@ -71,13 +71,9 @@ class SingletonMore{
 }
 
 
-/*================================================SingletonPatternDamo==============================*/
+/*================================================SingletonPatternDemo==============================*/
 
 public class SingletonPatternDamo {
-
-	
-	
- 
 	 public static void main(String []args)
 	 {
 		 Singleton  instace=Singleton.getInstance();
@@ -88,9 +84,6 @@ public class SingletonPatternDamo {
 		 sm.Print();
 		 SingletonMore sm1=SingletonMore.getInstance(1);
 		 sm1.Print();
-		 
-		 
-		 
-		 
+			 
 	 }
 }

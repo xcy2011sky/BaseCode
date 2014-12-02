@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 
+    android:orientation="horizontal"
+    >
+    
+    
+       <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp" >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center_vertical|left"
+             android:orientation="horizontal"
+             android:paddingBottom="2dp"
+    		android:paddingLeft="2dp"
+    		android:paddingRight="15dp"
+   			android:paddingTop="2dp" >
+           
+				<ImageView
+                    android:id="@+id/dialog_item_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+					android:paddingRight="10dp"
+				
+                    android:alpha="0.8"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_item_password" />
+
+				<TextView
+				    android:id="@+id/dialog_item_title"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				
+				    android:ellipsize="end"
+				    android:maxLines="1"
+				    android:text="@string/app_name"
+				    android:textColor="@color/black"
+				    android:textSize="15sp" />
+			</LinearLayout>
+
+</RelativeLayout>
+</LinearLayout>

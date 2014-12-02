@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 列表的滑动特效动画 -->
+    <string-array name="jazzy_effects">
+        <item>STANDARD </item>
+        <item>GROW </item>
+        <item>CARDS </item>
+        <item>CURL </item>
+        <item>WAVE </item>
+        <item>FLIP </item>
+        <item>FLY </item>
+        <item>REVERSE_FLY </item>
+        <item>HELIX </item>
+        <item>FAN  </item>
+        <item>TILT  </item>
+        <item>ZIPPER  </item>
+        <item>FADE  </item>
+        <item>TWIRL  </item>
+        <item>SLIDE_IN  </item>
+    </string-array>
+     <string-array name="password_category">
+         		<item>通讯聊天</item>
+         		<item>购货优惠</item>
+         		<item>影音图像</item>
+                <item>学习办公</item>
+                <item>常用工具</item>
+                <item>生活娱乐</item>
+                <item>出行必备</item>      
+                <item>其他</item>
+                    
+        </string-array>
+     
+       
+     
+     
+    
+       
+         <string-array name="yinhang">
+                <item>工商银行</item>
+                <item>中国银行</item>
+                <item>招商银行</item>
+                <item>农业银行</item>
+                <item>交通银行</item>
+                <item>建设银行</item> 
+                <item>平安银行</item>
+                <item>光大银行</item>             
+        </string-array>  
+       
+        
+        
+     
+         
+         
+      <string-array name="password_accout_label">
+                <item>卡号：</item>
+                <item>邮箱：</item>
+                <item>账号：</item>
+                <item>用户：</item>
+                <item>账号：</item>
+                <item>账号：</item>
+                <item>用户：</item>
+                <item>用户：</item>
+                <item>用户：</item>    
+        </string-array>
+
+    
+</resources>

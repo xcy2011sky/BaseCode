@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<categorys>
+   <category name="dianshang" id="0" count="5">
+       <item>
+           <index>0</index>
+           	<name>QQ</name>
+           <url>www.qq.com</url>
+           <descript></descript>
+       </item>
+        <item >
+           <index>1</index>
+           <name>微博</name>
+           <url>www.sina.com</url>
+           <descript>这儿是新浪微博</descript>           
+      </item>
+      <item >
+           <index>2</index>
+           <name>微信</name>
+           <url>wx.qq.com</url>
+           <descript>这是微信</descript>           
+      </item>
+   
+       <item>
+           <index>3</index>
+           <name>珍爱网</name>
+           <url>www.zhenai.com</url>
+           <descript>这是微信</descript>           
+      </item>
+         <item >
+           <index>4</index>
+           <name>人人网</name>
+           <url>www.renren.com</url>
+           <descript>这是是人人网</descript>           
+      </item>   
+   </category>
+   <category name="dianshang" id="1">
+         <item >
+           <index>0</index>
+           	<name>淘宝</name>
+           <url>www.taobo.com</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>京东</name>
+           <url>www.jd.com</url>
+           <descript></descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>1号店</name>
+            <url>www.yhd.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>58同城</name>
+            <url>sz.58.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>亚马逊</name>
+            <url>www.amazon.com</url>
+           <descript></descript>  
+         </item>
+          <item>
+            <index>5</index>
+            <name>苏宁</name>
+            <url>www.suning.com</url>
+           <descript>这是京东</descript>  
+         </item>     
+   </category>
+    <category name="video" id="2">
+         <item >
+           <index>0</index>
+           	<name>优酷</name>
+           <url>www.youku.com</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>爱奇艺</name>
+           <url>www.iqiyi.com</url>
+           <descript></descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>腾讯视频</name>
+            <url>v.qq.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>PPS</name>
+            <url>www.pps.tv</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>PPTV</name>
+            <url>www.pptv.com</url>
+           <descript></descript>  
+         </item>
+            <item>
+            <index>5</index>
+            <name>搜狐视频</name>
+            <url>tv.souhu.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>6</index>
+            <name>乐视</name>
+            <url>www.letv.com</url>
+           <descript></descript>  
+         </item>
+           
+   </category>
+      <category name="study" id="3">
+         <item >
+           <index>0</index>
+           	<name>CSDN</name>
+           <url>www.csdn.net</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>163邮箱</name>
+           <url>mail.163.com</url>
+           <descript></descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>sina邮箱</name>
+            <url>mail.sina.com.cn</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>google</name>
+            <url>www.google.com.hk</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>QQ邮箱</name>
+            <url>mail.qq.com</url>
+           <descript></descript>  
+         </item>
+         
+           
+   </category>
+      <category name="tools" id="4">
+         <item >
+           <index>0</index>
+           	<name>百度云</name>
+           <url>yun.baidu.com</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>金山云盘</name>
+           <url>www.kuaipan.com</url>
+           <descript></descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>365日历</name>
+            <url>i.365rili.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>360云盘</name>
+            <url>www.360.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>迅雷</name>
+            <url>www.xunlei.com</url>
+           <descript></descript>  
+         </item>
+          <item>
+            <index>5</index>
+            <name>有道</name>
+            <url>www.163.com</url>
+           <descript></descript>  
+         </item>
+           
+   </category>
+       <category name="live_game" id="5">
+         <item >
+           <index>0</index>
+           	<name>51job</name>
+           <url>www.51job.com</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>猎聘网</name>
+           <url>www.liepin.com</url>
+           <descript>这是京东</descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>豆瓣电影</name>
+            <url>www.douban.com</url>
+           <descript>这是京东</descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>糖果传奇</name>
+            <url>www.tangguo.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>墨迹天气</name>
+            <url>www.moji.com</url>
+           <descript></descript>  
+         </item>
+           
+   </category>
+    
+          <category name="traver" id="6">
+         <item >
+           <index>0</index>
+           	<name>去哪儿</name>
+           <url>www.qunar.com</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>携程</name>
+           <url>www.xiecheng.com</url>
+           <descript></descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>12306</name>
+            <url>www.12306.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>百度地图</name>
+            <url>map.baidu.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>高德地图</name>
+            <url>www.gaode.com</url>
+           <descript></descript>  
+         </item>
+      </category> 
+          
+        <category name="other" id="7">
+         <item >
+           <index>0</index>
+           	<name>新闻头条</name>
+           <url>www.toutiao.com</url>
+           <descript></descript>
+       </item>
+      <item >
+           <index>1</index>
+           <name>ZAKER</name>
+           <url>www.zaker.com</url>
+           <descript></descript>           
+      </item>
+        <item>
+            <index>2</index>
+            <name>知乎</name>
+            <url>www.zhihu.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>3</index>
+            <name>apple</name>
+            <url>www.apple.com</url>
+           <descript></descript>  
+         </item>
+           <item>
+            <index>4</index>
+            <name>路由器</name>
+            <url>www.exapmle.com</url>
+           <descript></descript>  
+         </item>
+      </category>
+       
+</categorys>
