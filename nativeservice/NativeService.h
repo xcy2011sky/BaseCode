@@ -1,4 +1,4 @@
-//#include <jni.h>
+
 #ifndef ANDROID_NATIVE_SERVICE_H
 #define ANDROID_NATIVE_SERVICE_H
 
@@ -27,7 +27,7 @@ public :
 	virtual ~NativeService(){}
 	
 
-		static const char * getServiceName(){
+	static const char * getServiceName(){
 		return "native.service";
 	}
 	 virtual status_t onTransact(uint32_t code, const Parcel& data, Parcel* reply,
@@ -37,9 +37,10 @@ public :
 	 }
 	virtual void onFirstRef() { }
 
-	      void put(const char *str)
+        void putStr(const char *str)
 	    {
 	    	  ALOGV(" nativeservice.str=%s\n",str);
+		   printf("nativeservice.str=%s\n",str);
 	    }
 };
 }

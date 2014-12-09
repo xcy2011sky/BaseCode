@@ -11,20 +11,33 @@
 
 namespace android {
 
-class BpNativeService : public BpInterface <INativeService>{
+
+
+class BpNativeService : public BpInterface <INativeService>
+{
 public:
-		BpNativeService(const sp<IBinder>&impl)
-		:BpInterface<INativeService>(impl){
-		}
-		virtual void put(const char *str){
+	void putStr(const char *str)
+	{
 			Parcel data,reply;
 			data.writeInterfaceToken(INativeService::getInterfaceDescriptor());
 			data.writeCString(str);
 			status_t status=remote()->transact(PUT,data,&reply);
-		}
+			
+			// return res;
+	}
+	BpNativeService(const sp<IBinder>&impl)
+		:BpInterface<INativeService>(impl){}	
+
+	
+	
+		
 };
 
-IMPLEMENT_META_INTERFACE(NativeService,"android.xcy.NativeService");
+
+
+
+
+IMPLEMENT_META_INTERFACE(NativeService,"NativeService");
 
 
 status_t BnNativeService::onTransact(uint32_t code,const Parcel & data,Parcel *reply,uint32_t flags)
@@ -37,7 +50,7 @@ status_t BnNativeService::onTransact(uint32_t code,const Parcel & data,Parcel *r
 		
 		const char *name=data.readCString();
 		
-		put(name);
+		putStr(name);
 		
 	    return NO_ERROR;
 

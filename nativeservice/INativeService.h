@@ -15,24 +15,26 @@
 
 namespace android {
 
-	enum {
-			PUT = IBinder::FIRST_CALL_TRANSACTION,
-			PUT_STR=PUT+1,
-		};
+class INativeService : public IInterface
+{
 
-class INativeService : public IInterface{
-public:
+ public:
 	DECLARE_META_INTERFACE(NativeService);
 	
 
-	virtual void put(const char *str)=0;
+	virtual void putStr(const char *str) =  0;
+	
+	enum {
+	PUT = IBinder::FIRST_CALL_TRANSACTION,
+	PUT_STR=PUT+1,
+		};
 	
 };
 
 class BnNativeService : public BnInterface<INativeService>
 {
 public :
-		virtual status_t onTransact(uint32_t code,const Parcel& data,Parcel* reply,uint32_t flags=0);
+	virtual status_t onTransact(uint32_t code,const Parcel& data,Parcel* reply,uint32_t flags=0);
 };
 
 }

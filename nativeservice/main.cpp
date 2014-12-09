@@ -32,8 +32,10 @@
 int main() {
 
 	ALOGV("NSerice onCreate ");
+	printf("NSerivce onCreate \n");
    	android::NativeService::instantiate();
 	ALOGV("NativeSerice register on sm ");
+	printf("NativeSerice register on sm\n");
         android::ProcessState::self()->startThreadPool();
         android::IPCThreadState::self()->joinThreadPool();
 
