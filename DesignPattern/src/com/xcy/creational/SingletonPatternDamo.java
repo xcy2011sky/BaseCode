@@ -69,6 +69,55 @@ class SingletonMore{
 	}
 	
 }
+/*******************************************************MuliThread Singleton*******************************/
+class TSingleton {
+	
+	private static TSingleton instance=null;
+	private TSingleton()
+	{
+		System.out.println("TSingleton onCreate");
+	}
+	/*============================synchronized==============*/
+	private static  synchronized TSingleton  InitSync()
+	{
+		if(instance==null)
+		{
+			instance=new TSingleton();
+		}
+		return instance;
+	}
+	public static  synchronized TSingleton getInstance2()
+	{
+		if(instance==null)
+		{
+			instance=new TSingleton();
+		}
+		return instance;
+	}
+	/****************************static***************************/
+	private static class SingletonConfig{
+		public static TSingleton Instance=new TSingleton();
+	}
+	
+	
+	public static TSingleton getInstance()
+	{
+		//return InitSync();
+		return SingletonConfig.Instance;
+	}
+}
+
+class MyThread extends Thread{
+
+	@Override
+	public void run() {
+
+		TSingleton s=TSingleton.getInstance2();
+		
+		super.run();
+	}
+	
+}
 
 
 /*================================================SingletonPatternDemo==============================*/
@@ -76,14 +125,21 @@ class SingletonMore{
 public class SingletonPatternDamo {
 	 public static void main(String []args)
 	 {
-		 Singleton  instace=Singleton.getInstance();
-		 
-		 instace.Print();
-		 
-		 SingletonMore sm=SingletonMore.getInstance(0);
-		 sm.Print();
-		 SingletonMore sm1=SingletonMore.getInstance(1);
-		 sm1.Print();
-			 
-	 }
+//		 Singleton  instace=Singleton.getInstance();
+//		 
+//		 instace.Print();
+//		 
+//		 SingletonMore sm=SingletonMore.getInstance(0);
+//		 sm.Print();
+//		 SingletonMore sm1=SingletonMore.getInstance(1);
+//		 sm1.Print();
+	
+	List<MyThread>threads=new ArrayList<MyThread>();
+	for(int i=0;i<10;i++)
+		{
+			threads.add(new MyThread());
+		}
+	for(int i=0;i<10;i++) threads.get(i).start();
+	}
+	
 }
