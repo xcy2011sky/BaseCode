@@ -30,6 +30,7 @@ class lanSend{
 		System.out.println("lanSend onJoin ");
 		try {
 			broadSocket.joinGroup(broadAddress);
+			broadSocket.setTimeToLive(1);
 			new Thread(new GetPacket()).start();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -65,6 +66,7 @@ class lanSend{
 		DatagramPacket packet ;
 		b=("off@"+lanDemo.msg).getBytes();
 		packet=new DatagramPacket(b, b.length,broadAddress,BROADCAST_PORT);
+        broadSocket.setTimeToLive(0);
 		sender.send(packet);
 	}
 	class GetPacket implements Runnable{
@@ -112,7 +114,7 @@ public class lanDemo {
 		try {
 			addr = InetAddress.getLocalHost();
 			ip=addr.getHostAddress().toString();
-			hostName=addr.getHostName();
+			hostName="xcy8";
 			msg=ip+"@"+hostName;
 			newSend=new lanSend();
 			newSend.join();
