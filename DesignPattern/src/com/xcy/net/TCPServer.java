@@ -33,29 +33,25 @@ public class TCPServer {
 				writer = new BufferedWriter(new OutputStreamWriter(
 						s.getOutputStream()));
 				String str;
-				while ((str = reader.readLine()) != null) {
+				while (!(str = reader.readLine()).equalsIgnoreCase("bye")) {
 					System.out.println(str);
 					// fout.write(str.getBytes());
 					// out.flush();
 				}
-				int flag = 10;
-				while (flag > 0) {
-					Thread.sleep(6000);
-					System.out.println(flag);
-					flag--;
-				}
-
-				writer.write("this is value from ss");
-				writer.flush();
-				s.shutdownOutput();
+//				int flag = 10;
+//				while (flag > 0) {
+//					Thread.sleep(6000);
+//					System.out.println(flag);
+//					flag--;
+//				}
+//
+//				writer.write("this is value from ss");
+//				writer.flush();
+//				s.shutdownOutput();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("create ss failed");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println("create ss failed");
-			e.printStackTrace();
-		}
-	}
+	
+	}}
 }

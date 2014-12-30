@@ -45,6 +45,12 @@ public class Connector {
 	public void FindServer(){
 		broadConn.FindService();
 	}
+	public void SendKey(int keycode,int action){
+		tcpConn.SendKey(keycode, action);
+	}
+	public void SendTouch(int x,int y,int action){
+		tcpConn.SendTouch(x, y, action);
+	}
 	
 	public void Loop(){
 		broadConn.Loop();

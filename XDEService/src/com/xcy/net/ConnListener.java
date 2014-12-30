@@ -8,5 +8,5 @@ public interface ConnListener {
 	public void RemoveClient(String client);
 	
 	public void HandlerKey(int keycode,int action);
-	public void HandlerTouch(float x,float y,int action);
+	public void HandlerTouch(int x,int y,int action);
 }

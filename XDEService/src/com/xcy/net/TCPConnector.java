@@ -52,6 +52,18 @@ public class TCPConnector {
 	public void Connect(String ip,int port){
 		debug.LogI("ip="+ip+"port="+port);
 		SocketAddress address =new InetSocketAddress(ip, port);
+		if(mSocket.isConnected()){
+			return;
+		}
+		if(mSocket.isClosed()){
+			mSocket=new Socket();
+			try {
+				mSocket.setKeepAlive(true);
+			} catch (SocketException e1) {
+				debug.LogE("msocket set keep alive failed ");
+				//e1.printStackTrace();
+			}
+		}
 		try {
 			mSocket.connect(address, 2000);
 			if(mSocket.isConnected()){
@@ -84,20 +96,30 @@ public class TCPConnector {
 				// TODO Auto-generated method stub
 				while(isRunning){
 					
-					String str;
-					StringBuffer result=new StringBuffer();
-					try {
-						Socket 	c = mServer.accept();
-						reader=new BufferedReader(new InputStreamReader(c.getInputStream()));
-						writer=new BufferedWriter(new OutputStreamWriter(c.getOutputStream()));
-						while((str=reader.readLine())!=null){
-								result.append(str);
+					if(mServer!=null){
+						try {
+							debug.LogI("tcp recv starting ");
+							Socket 	c = mServer.accept();
+							mListener.AddClient(c.getInetAddress().getHostAddress()+":"+c.getPort());
+							HandlerSocket(c);
+				
+							
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
-						HandlerCMD(result.toString());	
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					}else
+					{
+						try {
+							mServer=new ServerSocket(port);
+							mServer.bind(new InetSocketAddress(localIP, port));
+						} catch (IOException e) {
+							debug.LogE("init mServer failed ");
+							return;
+							//e.printStackTrace();
+						}
 					}
+					
 			
 				}
 			}
@@ -109,8 +131,13 @@ public class TCPConnector {
 		try {
 			OutputStreamWriter writer=new OutputStreamWriter(mSocket.getOutputStream());
 			writer.write(cmd);
+			writer.write("\n");
+			writer.write("@bye");
+			writer.write("\n");
 			writer.flush();
-			mSocket.shutdownOutput();
+			//writer.close();
+			//mSocket.shutdownOutput();
+		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -136,12 +163,46 @@ public class TCPConnector {
 			this.mListener.HandlerKey(keycode, action);
 			
 		}else if("touchscreen".equalsIgnoreCase(result[0])){
-			float x=Float.parseFloat(result[1]);
-			float y=Float.parseFloat(result[2]);
+			int x=Integer.parseInt(result[1]);
+			int  y=Integer.parseInt(result[2]);
 			int action=Integer.parseInt(result[3]);
 			debug.LogI("x="+x+" y="+y+"action= " +( (action== 1) ?"down":"up "));
 			this.mListener.HandlerTouch(x, y, action);
 		}
 	}
 
+	private void HandlerSocket(final Socket c){
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(!(c.isClosed())){
+					String str;
+					StringBuffer result=new StringBuffer();
+					try {
+						reader=new BufferedReader(new InputStreamReader(c.getInputStream()));
+						debug.LogI("tcp recv starting ");
+						while(!((str=reader.readLine()).equalsIgnoreCase("@bye"))){
+								result.append(str);
+								debug.LogI("tcp recv str"+str);
+						}
+						debug.LogI("tcp recv done "+result.toString());
+						HandlerCMD(result.toString());	
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					try {
+						writer=new BufferedWriter(new OutputStreamWriter(c.getOutputStream()));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
+				}
+			}
+		}).start();
+	}
 }

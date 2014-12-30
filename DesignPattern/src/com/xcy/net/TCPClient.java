@@ -40,24 +40,33 @@ public class TCPClient {
 			try {
 				FileInputStream fin = new FileInputStream(f1);
 				OutputStream os = s.getOutputStream();
-				while ((count = fin.read()) != -1) {
-					os.write(count);
-					os.flush();
-
-				}
-				s.shutdownOutput();
+				os.write("this is comsadfakjdfkajlkj k".getBytes());
+				os.write("this is comsadfakjdfkajlkj ksdfadfafasdfafd".getBytes());
+				os.write("this is comsadfakjdfkajlkj k111111111111111111111111111111111111111111111111111111111".getBytes());
+				os.write("\n".getBytes());
+				os.write("bye".getBytes());
+				os.flush();
+			//	s.shutdownOutput();
+//				while ((count = fin.read()) != -1) {
+//					os.write(count);
+//					os.write("@bye".getBytes());
+//					os.flush();
+//					s.shutdownOutput();
+//
+//				}
+			
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				System.out.println("File not Found Exception");
 				return;
 			}
-			reader = new BufferedReader(new InputStreamReader(
-					s.getInputStream()));
-			String line;
-			while ((line = reader.readLine()) != null) {
-				// String line=reader.readLine();
-				System.out.println(line);
-			}
+//			reader = new BufferedReader(new InputStreamReader(
+//					s.getInputStream()));
+//			String line;
+//			while ((line = reader.readLine()) != null) {
+//				// String line=reader.readLine();
+//				System.out.println(line);
+//			}
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
