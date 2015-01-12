@@ -30,12 +30,12 @@ public class SortUtil {
 
 		}
 		//冒泡排序
-	public static void BuSort(int array[]){
-			int []list=array;
+	public  void BuSort(int[] mArray){
+		int[]list=mArray;
 			
-			int tmp;
+		int tmp;
 			for(int i=0;i<list.length;i++){
-				for(int j=0;j<list.length-1;j++){
+				for(int  j=0;j<list.length-1;j++){
 					if(list[j+1]<list[j]){
 						tmp=list[j];
 						list[j]=list[j+1];
@@ -65,7 +65,7 @@ public class SortUtil {
 					left++;
 				}
 		       a[right]=a[left];
-				
+				                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 			}
 			a[left]=tmp;
 			return left;
@@ -75,6 +75,7 @@ public class SortUtil {
 			if(low<hight){
 				int mid_index=getMid(a,low,hight);
 				System.out.println("mid="+mid_index);
+				for(int i: a) System.out.print(" "+i);
 				quickSort(a,low,mid_index-1);
 				quickSort(a,mid_index+1,hight);
 			}
@@ -125,7 +126,19 @@ public class SortUtil {
 	      }  
 	
 	  }  
+		public  static void main (String []args){
+
+		int a[]={5,10,2,7,12,15,3};
 		
+		for(int i: a) System.out.print(" "+i);
+		System.out.println("QuickSort ");
+		QuickSort(a);
+		for(int i: a) System.out.print(" "+i);
+			
+			
+		
+			
+		}	
 		
 
 	
